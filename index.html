@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 
   <!-- Google Fonts: Poppins for headings, Lora for body text -->
@@ -11,169 +12,244 @@
   <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Overlay for the entire page background -->
+  <div class="body-overlay"></div>
 
-  <!-- Header / Hero Section -->
+  <!-- Navigation bar using Bootstrap classes for layout and dropdown -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark timeline-nav">
+    <div class="container">
+      <!-- Brand or logo (optional, can remove if not needed) -->
+      <a class="navbar-brand" href="#">Intel Timeline</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <!-- Home link -->
+          <li class="nav-item">
+            <a class="nav-link home-link" href="#">Home</a>
+          </li>
+          <!-- About link -->
+          <li class="nav-item">
+            <a class="nav-link about-link" href="#">About</a>
+          </li>
+          <!-- Mission link -->
+          <li class="nav-item">
+            <a class="nav-link mission-link" href="#">Mission</a>
+          </li>
+          <!-- Years dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="yearsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Years
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="yearsDropdown">
+              <li><a class="dropdown-item" href="#year-1968">1968</a></li>
+              <li><a class="dropdown-item" href="#year-1971">1971</a></li>
+              <li><a class="dropdown-item" href="#year-1978">1978</a></li>
+              <li><a class="dropdown-item" href="#year-1985">1985</a></li>
+              <li><a class="dropdown-item" href="#year-2006">2006</a></li>
+              <li><a class="dropdown-item" href="#year-2020">2020</a></li>
+              <li><a class="dropdown-item" href="#year-2022">2022</a></li>
+              <li><a class="dropdown-item" href="#year-2023">2023</a></li>
+              <li><a class="dropdown-item" href="#year-2024">2024</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Bootstrap Carousel for Home, About, Mission -->
   <header>
-    <div>
-      <!-- Ask Copilot to teach you about `.svg` 🙂 -->
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" style="display: block; margin: 0 auto; width: 320px; max-width: 90%; height: auto;" />
-      <!-- Intel Sustainability Mission Paragraph -->
-      <p style="font-size: 1.15em; color: white; border: 2px solid white; border-radius: 28px; padding: 24px 32px; margin: 28px auto 0 auto; max-width: 700px; box-shadow: none;">
-        <strong>Intel’s Sustainability Mission:</strong> At Intel, we believe that technology can be a force for good. Our mission is to create world-changing technology that improves the life of every person on the planet, while reducing our environmental impact. We are committed to responsible manufacturing, using renewable energy, conserving water, and minimizing waste. By working together with our partners and communities, we strive to build a more sustainable future for generations to come.
-      </p>
-
-      <!-- Navigation bar with links to each year in the timeline -->
-      <nav style="margin: 32px auto 0 auto; max-width: 900px; text-align: center;">
-        <!-- Simple navigation bar for beginners -->
-        <a href="#year-1968" style="color: white; background: #0071C5; border-radius: 18px; padding: 18px 38px; margin: 10px; text-decoration: none; font-weight: bold; display: inline-block; font-size: 1.3em;">1968</a>
-        <a href="#year-1971" style="color: white; background: #0071C5; border-radius: 18px; padding: 18px 38px; margin: 10px; text-decoration: none; font-weight: bold; display: inline-block; font-size: 1.3em;">1971</a>
-        <a href="#year-1978" style="color: white; background: #0071C5; border-radius: 18px; padding: 18px 38px; margin: 10px; text-decoration: none; font-weight: bold; display: inline-block; font-size: 1.3em;">1978</a>
-        <a href="#year-1985" style="color: white; background: #0071C5; border-radius: 18px; padding: 18px 38px; margin: 10px; text-decoration: none; font-weight: bold; display: inline-block; font-size: 1.3em;">1985</a>
-        <a href="#year-2006" style="color: white; background: #0071C5; border-radius: 18px; padding: 18px 38px; margin: 10px; text-decoration: none; font-weight: bold; display: inline-block; font-size: 1.3em;">2006</a>
-        <a href="#year-2020" style="color: white; background: #0071C5; border-radius: 18px; padding: 18px 38px; margin: 10px; text-decoration: none; font-weight: bold; display: inline-block; font-size: 1.3em;">2020</a>
-        <a href="#year-2022" style="color: white; background: #0071C5; border-radius: 18px; padding: 18px 38px; margin: 10px; text-decoration: none; font-weight: bold; display: inline-block; font-size: 1.3em;">2022</a>
-        <a href="#year-2023" style="color: white; background: #0071C5; border-radius: 18px; padding: 18px 38px; margin: 10px; text-decoration: none; font-weight: bold; display: inline-block; font-size: 1.3em;">2023</a>
-        <a href="#year-2024" style="color: white; background: #0071C5; border-radius: 18px; padding: 18px 38px; margin: 10px; text-decoration: none; font-weight: bold; display: inline-block; font-size: 1.3em;">2024</a>
-      </nav>
-
-      <!-- Main Heading -->
-      <h1 style="font-size: 3.2em;">
-        Sustainability Through the Ages
-      </h1>
-
-      <!-- Subheading / Description -->
-      <p>
-        Explore Intel's journey through time, discovering how our commitment
-        to innovation has shaped a more sustainable future for technology 
-        and our planet.
-      </p>
+    <div id="mainCarousel" class="carousel slide" data-bs-interval="false">
+      <div class="carousel-inner">
+        <!-- Intel Heading Slide (first slide) -->
+        <div class="carousel-item active">
+          <div class="text-center" style="padding: 48px 0;">
+            <!-- Intel logo (optional, can remove if not needed) -->
+            <img src="img/intel-header-logo.svg" alt="Intel Logo" class="intel-logo mb-4" style="width: 300px; height: auto;">
+            <h1 class="main-heading">Sustainability Through the Ages</h1>
+            <p style="font-size: 1.7em; color: #fff; max-width: 600px; margin: 24px auto 0 auto;">
+              Discover Intel's journey in <span style="font-size:1.2em;">Sustainability</span>, <span style="font-size:1.2em;">Innovation</span>, and <span style="font-size:1.2em;">Responsibility</span>. Use the navigation above to explore our story.
+            </p>
+          </div>
+        </div>
+        <!-- Home Slide -->
+        <div class="carousel-item">
+          <div class="home-section">
+            <h2>Welcome to Intel Sustainability Timeline</h2>
+            <p>This site highlights Intel's journey and achievements in sustainability. Explore our timeline to see how we are making a difference for the planet and future generations.</p>
+          </div>
+        </div>
+        <!-- About Slide -->
+        <div class="carousel-item">
+          <div class="about-section">
+            <h2 class="main-heading">Welcome to Intel's Sustainability</h2>
+            <p>At Intel, sustainability is more than a commitment—it’s a core part of how we build, innovate, and lead. From designing energy-efficient processors to achieving net-zero emissions, we’re driving technology forward while protecting the planet we all share.</p>
+          </div>
+        </div>
+        <!-- Mission Slide -->
+        <div class="carousel-item">
+          <div class="mission-section">
+            <h2>Mission</h2>
+            <p>Our mission is to lead in sustainability by advancing technology that improves lives and protects the planet. We strive to achieve ambitious goals in energy efficiency, waste reduction, and social responsibility.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Timeline Cards Section -->
-  <section class="timeline-cards">
-
-    <!-- Card 1: 1968 -->
-    <div id="year-1968" style="background-image: url('img/1.jpg'); background-size: cover; background-position: center; padding: 160px; border-radius: 72px; margin-bottom: 144px;">
-      <!-- Year as a bigger white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 28px; padding: 14px 36px; margin-bottom: 16px; font-size: 2em; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">1968</span>
-      <!-- Heading as a white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 20px; padding: 10px 24px; margin-bottom: 14px; font-size: 1.2em; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">Intel Founded</span>
-      <p>
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
-    </div>
-
-    <!-- Card 2: 1971 -->
-    <div id="year-1971" style="background-image: url('img/2.jpg'); background-size: cover; background-position: center; padding: 160px; border-radius: 72px; margin-bottom: 144px;">
-      <!-- Year as a bigger white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 28px; padding: 14px 36px; margin-bottom: 16px; font-size: 2em; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">1971</span>
-      <!-- Heading as a white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 20px; padding: 10px 24px; margin-bottom: 14px; font-size: 1.2em; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">First Microprocessor</span>
-      <p>
-        Intel debuts the 4004, the world's first commercial microprocessor, 
-        igniting the microprocessor revolution and propelling the future 
-        of computing devices.
-      </p>
-    </div>
-
-    <!-- Card 3: 1978 -->
-    <div id="year-1978" style="background-image: url('img/3.jpg'); background-size: cover; background-position: center; padding: 160px; border-radius: 72px; margin-bottom: 144px;">
-      <!-- Year as a bigger white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 28px; padding: 14px 36px; margin-bottom: 16px; font-size: 2em; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">1978</span>
-      <!-- Heading as a white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 20px; padding: 10px 24px; margin-bottom: 14px; font-size: 1.2em; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">8086 Processor</span>
-      <p>
-        Launch of the 8086 processor, establishing the x86 architecture 
-        that drives countless PCs and servers in the modern era.
-      </p>
-    </div>
-
-    <!-- Card 4: 1985 -->
-    <div id="year-1985" style="background-image: url('img/4.jpg'); background-size: cover; background-position: center; padding: 160px; border-radius: 72px; margin-bottom: 144px;">
-      <!-- Year as a bigger white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 28px; padding: 14px 36px; margin-bottom: 16px; font-size: 2em; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">1985</span>
-      <!-- Heading as a white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 20px; padding: 10px 24px; margin-bottom: 14px; font-size: 1.2em; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">386 Processor</span>
-      <p>
-        Intel introduces the 386 processor with 32-bit architecture, 
-        ushering in a new era of performance and multitasking for 
-        personal computers.
-      </p>
-    </div>
-
-    <!-- Card 5: 2006 -->
-    <div id="year-2006" style="background-image: url('img/Intel 2006.avif'); background-size: cover; background-position: center; padding: 160px; border-radius: 72px; margin-bottom: 144px;">
-      <!-- Year as a bigger white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 28px; padding: 14px 36px; margin-bottom: 16px; font-size: 2em; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">2006</span>
-      <!-- Heading as a white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 20px; padding: 10px 24px; margin-bottom: 14px; font-size: 1.2em; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">Peak GHG Emissions</span>
-      <p>
-        This year marks Intel's highest annual greenhouse gas emissions 
-        for operations. Over subsequent years, Intel invests heavily in 
-        chemical abatement, renewable energy, and energy-efficient 
-        manufacturing to reverse this trend.
-      </p>
-    </div>
-
-    <!-- Card 6: 2020 -->
-    <div id="year-2020" style="background-image: url('img/Intel 2020.avif'); background-size: cover; background-position: center; padding: 160px; border-radius: 72px; margin-bottom: 144px;">
-      <!-- Year as a bigger white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 28px; padding: 14px 36px; margin-bottom: 16px; font-size: 2em; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">2020</span>
-      <!-- Heading as a white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 20px; padding: 10px 24px; margin-bottom: 14px; font-size: 1.2em; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">RISE Strategy</span>
-      <p>
-        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-        progress on climate action, water stewardship, and waste reduction.
-      </p>
-    </div>
-
-    <!-- Card 7: 2022 -->
-    <div id="year-2022" style="background-image: url('img/Intel 2022.avif'); background-size: cover; background-position: center; padding: 160px; border-radius: 72px; margin-bottom: 144px;">
-      <!-- Year as a bigger white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 28px; padding: 14px 36px; margin-bottom: 16px; font-size: 2em; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">2022</span>
-      <!-- Heading as a white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 20px; padding: 10px 24px; margin-bottom: 14px; font-size: 1.2em; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">Net-Zero By 2040</span>
-      <p>
-        Intel announces its commitment to achieve net-zero greenhouse 
-        gas emissions (Scope 1 and 2) across its global operations 
-        by 2040, building on years of environmental initiatives.
-      </p>
-    </div>
-
-    <!-- Card 8: 2023 -->
-    <div id="year-2023" style="background-image: url('img/Intel 2023.avif'); background-size: cover; background-position: center; padding: 160px; border-radius: 72px; margin-bottom: 144px;">
-      <!-- Year as a bigger white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 28px; padding: 14px 36px; margin-bottom: 16px; font-size: 2em; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">2023</span>
-      <!-- Heading as a white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 20px; padding: 10px 24px; margin-bottom: 14px; font-size: 1.2em; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">Renewable Electricity</span>
-      <p>
-        The company achieves 99% renewable electricity usage worldwide, 
-        helping to drastically lower carbon emissions and driving progress 
-        toward Intel's long-term sustainability goals.
-      </p>
-    </div>
-
-    <!-- Card 9: 2024 -->
-    <div id="year-2024" style="background-image: url('img/Intel 2024.avif'); background-size: cover; background-position: center; padding: 160px; border-radius: 72px; margin-bottom: 144px;">
-      <!-- Year as a bigger white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 28px; padding: 14px 36px; margin-bottom: 16px; font-size: 2em; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">2024</span>
-      <!-- Heading as a white button -->
-      <span style="display: inline-block; background: white; color: #222; font-weight: bold; border-radius: 20px; padding: 10px 24px; margin-bottom: 14px; font-size: 1.2em; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">Sustainability Summit</span>
-      <p>
-        Intel hosts its first Sustainability Summit, uniting suppliers, 
-        government officials, and industry leaders to collaborate on 
-        next-generation sustainable semiconductor manufacturing.
-      </p>
+  <!-- Timeline Cards Section using Bootstrap grid -->
+  <section class="timeline-cards container">
+    <div class="row g-4">
+      <!-- Card 1: 1968 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div id="year-1968" class="timeline-card" style="background-image: url('img/1.jpg'); background-size: cover; background-position: center;">
+          <span class="card-year">1968</span>
+          <span class="card-title">Intel Founded</span>
+          <p>
+            Robert Noyce and Gordon Moore rename the newly formed company 
+            NM Electronics to Intel Corporation, laying the foundation for 
+            decades of technological innovation.
+          </p>
+        </div>
+      </div>
+      <!-- Card 2: 1971 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div id="year-1971" class="timeline-card" style="background-image: url('img/2.jpg'); background-size: cover; background-position: center;">
+          <span class="card-year">1971</span>
+          <span class="card-title">First Microprocessor</span>
+          <p>
+            Intel debuts the 4004, the world's first commercial microprocessor, 
+            igniting the microprocessor revolution and propelling the future 
+            of computing devices.
+          </p>
+        </div>
+      </div>
+      <!-- Card 3: 1978 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div id="year-1978" class="timeline-card" style="background-image: url('img/3.jpg'); background-size: cover; background-position: center;">
+          <span class="card-year">1978</span>
+          <span class="card-title">8086 Processor</span>
+          <p>
+            Launch of the 8086 processor, establishing the x86 architecture 
+            that drives countless PCs and servers in the modern era.
+          </p>
+        </div>
+      </div>
+      <!-- Card 4: 1985 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div id="year-1985" class="timeline-card" style="background-image: url('img/4.jpg'); background-size: cover; background-position: center;">
+          <span class="card-year">1985</span>
+          <span class="card-title">386 Processor</span>
+          <p>
+            Intel introduces the 386 processor with 32-bit architecture, 
+            ushering in a new era of performance and multitasking for 
+            personal computers.
+          </p>
+        </div>
+      </div>
+      <!-- Card 5: 2006 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div id="year-2006" class="timeline-card" style="background-image: url('img/Intel 2006.avif'); background-size: cover; background-position: center;">
+          <span class="card-year">2006</span>
+          <span class="card-title">Peak GHG Emissions</span>
+          <p>
+            This year marks Intel's highest annual greenhouse gas emissions 
+            for operations. Over subsequent years, Intel invests heavily in 
+            chemical abatement, renewable energy, and energy-efficient 
+            manufacturing to reverse this trend.
+          </p>
+        </div>
+      </div>
+      <!-- Card 6: 2020 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div id="year-2020" class="timeline-card" style="background-image: url('img/Intel 2020.avif'); background-size: cover; background-position: center;">
+          <span class="card-year">2020</span>
+          <span class="card-title">RISE Strategy</span>
+          <p>
+            Intel launches its RISE (Responsible, Inclusive, Sustainable, 
+            Enabling) strategy and 2030 goals, aiming to drive industry-wide 
+            progress on climate action, water stewardship, and waste reduction.
+          </p>
+        </div>
+      </div>
+      <!-- Card 7: 2022 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div id="year-2022" class="timeline-card" style="background-image: url('img/Intel 2022.avif'); background-size: cover; background-position: center;">
+          <span class="card-year">2022</span>
+          <span class="card-title">Net-Zero By 2040</span>
+          <p>
+            Intel announces its commitment to achieve net-zero greenhouse 
+            gas emissions (Scope 1 and 2) across its global operations 
+            by 2040, building on years of environmental initiatives.
+          </p>
+        </div>
+      </div>
+      <!-- Card 8: 2023 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div id="year-2023" class="timeline-card" style="background-image: url('img/Intel 2023.avif'); background-size: cover; background-position: center;">
+          <span class="card-year">2023</span>
+          <span class="card-title">Renewable Electricity</span>
+          <p>
+            The company achieves 99% renewable electricity usage worldwide, 
+            helping to drastically lower carbon emissions and driving progress 
+            toward Intel's long-term sustainability goals.
+          </p>
+        </div>
+      </div>
+      <!-- Card 9: 2024 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div id="year-2024" class="timeline-card" style="background-image: url('img/Intel 2024.avif'); background-size: cover; background-position: center;">
+          <span class="card-year">2024</span>
+          <span class="card-title">Sustainability Summit</span>
+          <p>
+            Intel hosts its first Sustainability Summit, uniting suppliers, 
+            government officials, and industry leaders to collaborate on 
+            next-generation sustainable semiconductor manufacturing.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
   <!-- Footer section with Intel blue background -->
   <footer style="background: #0071C5; color: white; text-align: center; padding: 18px 0; margin-top: 32px; font-family: 'Lora', serif; font-size: 1.1em;">
     Scroll to view timeline | Hover over cards to learn more!
   </footer>
+
+  <!-- Bootstrap JS (optional, for dropdown functionality) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Navigation bar links control the carousel -->
+  <script>
+    // Wait for the DOM to load
+    document.addEventListener('DOMContentLoaded', function() {
+      var carousel = document.querySelector('#mainCarousel');
+      if (carousel) {
+        var bsCarousel = bootstrap.Carousel.getOrCreateInstance(carousel);
+        // Home
+        document.querySelectorAll('a.nav-link.home-link').forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            bsCarousel.to(0); // Intel Heading is now the first slide
+          });
+        });
+        // About
+        document.querySelectorAll('a.nav-link.about-link').forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            bsCarousel.to(2); // About is now the third slide
+          });
+        });
+        // Mission
+        document.querySelectorAll('a.nav-link.mission-link').forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            bsCarousel.to(3); // Mission is now the fourth slide
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
 
