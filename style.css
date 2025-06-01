@@ -1,0 +1,331 @@
+/* Add your CSS here */
+text {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+/* Make the hero section background black */
+header {
+  background-color: black; /* Sets the background to black */
+  color: white; /* Makes text readable on black background */
+  padding: 40px 0; /* Adds space above and below the content */
+}
+
+/* Make the Intel logo in the hero section smaller and centered */
+header img {
+  display: block;
+  margin: 0 auto 20px auto; /* Center the logo and add space below */
+  width: 120px; /* Make the logo smaller */
+  height: auto;
+}
+
+/* Center the text in the header */
+header div {
+  text-align: center;
+}
+
+/* Make the hero section description text larger for readability */
+header p {
+  font-size: 25px; /* Sets the paragraph text in the hero section to 25px */
+}
+
+/* Make the header title (h1) smaller */
+header h1 {
+  font-size: 1.5em; /* Smaller size for the main title */
+  margin-bottom: 0.5em;
+}
+
+/* Timeline card section background: off-white with gradient into Intel blue */
+section {
+  /* Off-white to Intel blue gradient background */
+  background: linear-gradient(to bottom, #f8f9fa 0%, #fdfdfd 100%); /* #f8f9fa is off-white, #0071c5 is Intel blue */
+  padding: 40px 0; /* Adds space above and below the section */
+}
+
+/* Optional: Add some spacing between cards */
+section > div {
+  margin-bottom: 24px;
+  background: rgb(106, 183, 235); /* Keeps cards readable on gradient */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+}
+
+/* Increase font size for paragraph text inside timeline cards */
+section > div p {
+  font-size: 25px; /* Makes the paragraph text larger for better readability */
+}
+
+/* Increase font size of the years (h2) in each timeline card */
+section > div h2 {
+  font-size: 40px; /* Makes the year stand out and appear larger */
+  margin-bottom: 0.2em; /* Adds a little space below the year */
+}
+
+/* Timeline Cards Section Styles */
+section.timeline-cards {
+  display: flex; /* Enables flexbox layout */
+  flex-direction: row; /* Places cards in a row */
+  flex-wrap: nowrap; /* Prevent wrapping to keep cards in a single row */
+  gap: 24px; /* Adds space between cards */
+  justify-content: flex-start; /* Align cards to the left */
+  overflow-x: scroll; /* Always show horizontal scrollbar */
+  /* Off-white to Intel blue gradient background */
+  background: linear-gradient(to bottom, #f8f9fa 0%, #2f7dd6 100%);
+  padding: 40px 0;
+  scroll-snap-type: x mandatory; /* Smooth snap for scrolling */
+  scrollbar-color: #0071c5 #f8f9fa; /* Custom color for Firefox */
+  scrollbar-width: thin; /* Thinner scrollbar for Firefox */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+section.timeline-cards > div {
+  flex: 0 0 300px; /* Each card is 300px wide, does not shrink or grow */
+  margin-bottom: 0; /* Remove bottom margin since gap is used */
+  background: rgb(229, 230, 233);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  scroll-snap-align: start; /* Snap each card to the start when scrolling */
+  position: relative; /* Needed for overlay positioning */
+  overflow: hidden; /* Hide overlay outside card */
+  transition: transform 0.4s; /* Transition for slide-in effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* When hovering a card, slide the next card to the right */
+section.timeline-cards > div:hover + div {
+  transform: translateX(30px); /* Slides the next card to the right */
+}
+
+/* Show scrollbar for Webkit browsers (Chrome, Safari, Edge) */
+section.timeline-cards::-webkit-scrollbar {
+  display: block;
+  height: 12px;
+  background: #f8f9fa;
+}
+section.timeline-cards::-webkit-scrollbar-thumb {
+  background: #0071c5;
+  border-radius: 6px;
+}
+
+body {
+  font-family: 'Lora', serif; /* Use Lora for all body text */
+  color: #222; /* Dark gray for good readability */
+  font-size: 18px; /* Comfortable default size for body text */
+  line-height: 1.6; /* More space between lines for easier reading */
+  min-height: 100vh; /* Make sure the body stretches to at least the full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Use Poppins for all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Timeline card overlay styles */
+section.timeline-cards > div p {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.85); /* Dark overlay */
+  color: #fff;
+  font-size: 2em; /* Slightly larger overlay text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Center the overlay text horizontally */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  border-radius: 8px;
+  z-index: 3;
+  box-sizing: border-box; /* Ensures padding is inside the card */
+  inset: 0; /* Shorthand for top:0; right:0; bottom:0; left:0; covers the card exactly */
+  border-radius: inherit; /* Match the card's border radius */
+}
+
+section.timeline-cards > div:hover p {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Make sure card content is below the overlay by default */
+section.timeline-cards > div *:not(p) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Overlay should be above everything else */
+section.timeline-cards > div p {
+  z-index: 3;
+}
+
+/* General text style for the whole page */
+p {
+  margin-bottom: 1em;
+}
+
+/* Enhance horizontal timeline with scroll snap for smooth navigation */
+section.timeline-cards {
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+section.timeline-cards > div {
+  scroll-snap-align: start;
+}
+
+/* Responsive: Stack timeline cards vertically and make them wider on small screens */
+@media (max-width: 700px) {
+  section.timeline-cards {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center cards in the column */
+    overflow-x: visible; /* Remove horizontal scroll */
+    max-width: 100%; /* Allow full width */
+    gap: 16px;
+    scroll-snap-type: none;
+  }
+  section.timeline-cards > div {
+    width: 90vw; /* Make cards wider on small screens */
+    max-width: 400px;
+    min-width: 0;
+    flex: none;
+    scroll-snap-align: none;
+  }
+  section.timeline-cards > div img {
+    width: 120px; /* Make images a bit smaller on small screens */
+  }
+  /* Ensure overlay covers the card and is visible on small screens */
+  section.timeline-cards > div p {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-size: 1.2em; /* Slightly larger on small screens */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center the overlay text horizontally */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    border-radius: 8px;
+    z-index: 3;
+    box-sizing: border-box; /* Ensures padding is inside the card */
+    inset: 0; /* Shorthand for top:0; right:0; bottom:0; left:0; covers the card exactly */
+    border-radius: inherit; /* Match the card's border radius */
+  }
+  section.timeline-cards > div:hover p {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Style the year button to be much bigger and centered */
+section.timeline-cards > div span:first-of-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 4em; /* Make the year text even larger */
+  padding: 36px 80px; /* Make the button itself even bigger */
+  border-radius: 40px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* Responsive styles for navigation bar and timeline cards */
+@media (max-width: 900px) {
+  nav {
+    max-width: 100% !important;
+  }
+  nav a {
+    font-size: 1em !important;
+    padding: 12px 18px !important;
+    margin: 6px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    max-width: 100% !important;
+    padding: 0 4px;
+  }
+  nav a {
+    font-size: 0.95em !important;
+    padding: 8px 8px !important;
+    margin: 4px !important;
+    border-radius: 14px !important;
+  }
+  .timeline-cards > div {
+    padding: 40px !important;
+    border-radius: 24px !important;
+    margin-bottom: 40px !important;
+  }
+  .timeline-cards span {
+    font-size: 1.1em !important;
+    padding: 8px 12px !important;
+    border-radius: 12px !important;
+  }
+  .timeline-cards p {
+    font-size: 1em !important;
+  }
+  h1 {
+    font-size: 1.7em !important;
+  }
+  .header-mission {
+    font-size: 1em !important;
+    padding: 12px 8px !important;
+  }
+}
+
+/* Smooth transitions for hover effects on nav and cards */
+nav a, .timeline-cards > div, .timeline-cards span {
+  transition: all 0.3s ease;
+}
+
+/* Only enable hover effects on devices that support hover (like desktop) */
+@media (hover: hover) and (pointer: fine) {
+  nav a:hover {
+    background: #005fa3 !important;
+    color: #fff !important;
+    transform: scale(1.08);
+  }
+  .timeline-cards > div:hover {
+    box-shadow: 0 8px 32px rgba(0,113,197,0.18);
+    transform: scale(1.03);
+  }
+  section.timeline-cards > div:hover + div {
+    transform: translateX(30px);
+  }
+  section.timeline-cards > div:hover p {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Always show overlay on tap for touch devices (no hover) */
+@media (hover: none) and (pointer: coarse) {
+  section.timeline-cards > div:active p,
+  section.timeline-cards > div:focus p {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
