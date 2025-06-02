@@ -25,9 +25,9 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.30); /* Increased transparency (was 0.55) */
-  z-index: 0;
-  pointer-events: none;
+  background: rgba(0,0,0,0.30); /* Semi-transparent black overlay for readability */
+  z-index: 0; /* Make sure overlay is behind all content */
+  pointer-events: none; /* Allow clicks through overlay */
 }
 
 /* Make the hero section background black */
@@ -95,7 +95,7 @@ section > div h2 {
 /* Card year style */
 .card-year {
   display: inline-block;
-  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
   color: #222;
   font-weight: bold;
   border-radius: 28px;
@@ -107,8 +107,10 @@ section > div h2 {
 
 /* Card title style */
 .card-title {
-  display: inline-block;
-  background: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
   color: #222;
   font-weight: bold;
   border-radius: 20px;
@@ -116,6 +118,8 @@ section > div h2 {
   margin-bottom: 14px;
   font-size: 1.2em;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Timeline card appearance (let Bootstrap handle layout) */
@@ -130,6 +134,9 @@ section > div h2 {
   min-height: 340px; /* Minimum height for a tall card */
   width: 100%; /* Fill the Bootstrap column */
   box-sizing: border-box; /* Include padding in width */
+  border: 3px solid #fff; /* White border for contrast */
+  border-radius: 16px;    /* Rounded corners for a modern look */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08); /* Soft shadow for depth */
 }
 
 /* Remove all custom section.timeline-cards > div and section.timeline-cards flexbox/scroll-snap styles to let Bootstrap grid handle layout */
@@ -169,9 +176,33 @@ body {
   flex-direction: column;
 }
 
-/* Use Poppins for all headings */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
+/* Use Montserrat Bold for all headings */
+h1, h2, h3, h4, h5, h6, .main-heading, .header-mission {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+}
+
+/* Use Roboto for all body text */
+body, p, .timeline-card, .card-title, .card-year, .dropdown-item, .navbar-nav .nav-link {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* Remove old font-family from nav and dropdown */
+.navbar-nav .nav-link, .dropdown-item {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Remove Poppins and Lora from any headings or nav */
+.home-section h2 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+}
+
+/* Ensure overlay is always behind content */
+body, main, header, nav, .container, .timeline-card {
+  position: relative;
+  z-index: 1;
 }
 
 /* Timeline card overlay styles */
@@ -214,6 +245,11 @@ section.timeline-cards > div *:not(p) {
 /* Overlay should be above everything else */
 section.timeline-cards > div p {
   z-index: 3;
+}
+
+/* Make sure carousel arrows are always on top */
+.carousel-control-prev, .carousel-control-next {
+  z-index: 20;
 }
 
 /* General text style for the whole page */
@@ -265,7 +301,7 @@ p {
 }
 
 .navbar-nav .nav-link {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 1.08em;
   color: #e3e3e3 !important;
   margin-right: 0;
@@ -285,7 +321,7 @@ p {
 
 .dropdown-item {
   color: #e3e3e3;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 1em;
 }
 
@@ -349,7 +385,8 @@ section.timeline-cards > div span:first-of-type {
   z-index: 2; /* Make sure the home section is above the overlay */
 }
 .home-section h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
   font-size: 2.2em;
   color: #0071c5;
   margin-bottom: 18px;
@@ -357,6 +394,37 @@ section.timeline-cards > div span:first-of-type {
 .home-section p {
   font-size: 1.2em;
   color: #222;
+}
+
+/* Contact form section styles */
+.contact-form-section {
+  background: rgba(255,255,255,0.85); /* White, semi-transparent */
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  padding: 32px 24px 24px 24px;
+  margin-bottom: 40px;
+}
+
+/* Force left alignment for form labels in the contact form, even in RTL */
+.contact-form-section label.form-label {
+  text-align: left !important;
+  display: block;
+  color: #111;
+  font-weight: bold;
+  direction: ltr;
+}
+
+/* Add a hover effect for the contact form submit button */
+.contact-form-section .btn-primary:hover,
+.contact-form-section .btn-primary:focus {
+  background-color: #005fa3 !important; /* Slightly darker Intel blue */
+  color: #fff !important;
+  box-shadow: 0 8px 24px rgba(0,113,197,0.18);
+  border: none;
+  transform: translateY(-6px) scale(1.04);
+}
+.contact-form-section .btn-primary {
+  transition: all 0.22s cubic-bezier(.4,1.5,.5,1);
 }
 
 /* Responsive styles for navigation bar and timeline cards */
@@ -450,3 +518,66 @@ header .main-heading {
 
 /* Import Roboto for body fonts */
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+/***********************
+Custom Carousel Arrow Styles
+***********************/
+.carousel-control-prev, .carousel-control-next {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.98;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  width: 70px;
+  height: 70px;
+  background-size: 70px 70px;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.22));
+  background-color: rgba(0,113,197,0.92); /* Intel blue with more opacity */
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.16);
+}
+.carousel-control-prev-icon {
+  background-image: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M10 6l12 10-12 10" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+}
+.carousel-control-next-icon {
+  background-image: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M22 6L10 16l12 10" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+}
+/* Remove yellow focus border from carousel arrows, but keep accessibility for keyboard users */
+.carousel-control-prev:focus, .carousel-control-next:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/*
+  .force-ltr class is used to keep certain elements (like navbar and timeline row) in left-to-right order visually, even in RTL mode.
+*/
+.force-ltr {
+  direction: ltr !important; /* Keep children in LTR order */
+}
+/* For navigation bar, keep text right-aligned in RTL for a natural look */
+.timeline-nav .force-ltr {
+  text-align: right;
+}
+/* For timeline cards, allow text inside cards to follow page direction (inherit) */
+.timeline-cards .timeline-card {
+  direction: inherit;
+}
+
+/* Footer email link: white by default, yellow on hover */
+footer a[href^="mailto"] {
+  color: #fff !important;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+footer a[href^="mailto"]:hover,
+footer a[href^="mailto"]:focus {
+  color: #ffd700 !important;
+}
+
+/* Increase the font size for all text in the footer section for better readability. This will override the inline style in index.html and apply to all footer content. */
+footer {
+  font-size: 1.35em !important;
+}

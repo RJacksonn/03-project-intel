@@ -4,20 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap RTL CSS (for right-to-left language support) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.rtl.min.css" integrity="sha384-MdqCcafa5BLgxBDJ3d/4D292geNL64JyRtSGjEszRUQX9rhL1QkcnId+OT7Yw+D+" crossorigin="anonymous">
+  <!-- Custom styles -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Google Fonts: Poppins for headings, Lora for body text -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Montserrat Bold for headings, Roboto for body text -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body dir="rtl">
   <!-- Overlay for the entire page background -->
   <div class="body-overlay"></div>
 
   <!-- Navigation bar using Bootstrap classes for layout and dropdown -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark timeline-nav">
-    <div class="container">
+    <div class="container force-ltr">
       <!-- Brand or logo (optional, can remove if not needed) -->
       <a class="navbar-brand" href="#">Intel Timeline</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,6 +56,10 @@
               <li><a class="dropdown-item" href="#year-2024">2024</a></li>
             </ul>
           </li>
+          <!-- Contact link -->
+          <li class="nav-item">
+            <a class="nav-link contact-link" href="#contact">Contact</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -61,7 +67,7 @@
 
   <!-- Bootstrap Carousel for Home, About, Mission -->
   <header>
-    <div id="mainCarousel" class="carousel slide" data-bs-interval="false">
+    <div id="mainCarousel" class="carousel slide" data-bs-interval="10000" data-bs-ride="carousel" data-bs-touch="true" data-bs-keyboard="true">
       <div class="carousel-inner">
         <!-- Intel Heading Slide (first slide) -->
         <div class="carousel-item active">
@@ -70,38 +76,44 @@
             <img src="img/intel-header-logo.svg" alt="Intel Logo" class="intel-logo mb-4" style="width: 300px; height: auto;">
             <h1 class="main-heading">Sustainability Through the Ages</h1>
             <p style="font-size: 1.7em; color: #fff; max-width: 600px; margin: 24px auto 0 auto;">
-              Discover Intel's journey in <span style="font-size:1.2em;">Sustainability</span>, <span style="font-size:1.2em;">Innovation</span>, and <span style="font-size:1.2em;">Responsibility</span>. Use the navigation above to explore our story.
+              Discover Intel's journey in <span style="font-size:1.2em; font-weight:bold;">Sustainability</span>, <span style="font-size:1.2em; font-weight:bold;">Innovation</span>, and <span style="font-size:1.2em; font-weight:bold;">Responsibility</span>. Use the navigation above to explore our story.
             </p>
-          </div>
-        </div>
-        <!-- Home Slide -->
-        <div class="carousel-item">
-          <div class="home-section">
-            <h2>Welcome to Intel Sustainability Timeline</h2>
-            <p>This site highlights Intel's journey and achievements in sustainability. Explore our timeline to see how we are making a difference for the planet and future generations.</p>
           </div>
         </div>
         <!-- About Slide -->
         <div class="carousel-item">
           <div class="about-section">
-            <h2 class="main-heading">Welcome to Intel's Sustainability</h2>
-            <p>At Intel, sustainability is more than a commitment—it’s a core part of how we build, innovate, and lead. From designing energy-efficient processors to achieving net-zero emissions, we’re driving technology forward while protecting the planet we all share.</p>
+            <h2 class="main-heading">About</h2>
+            <p style="font-size: 1.7em; color: #fff; max-width: 600px; margin: 24px auto 0 auto;">
+              At Intel, sustainability is more than a commitment—it’s a core part of how we build, innovate, and lead. From designing energy-efficient processors to achieving net-zero emissions, we’re driving technology forward while protecting the planet we all share.
+            </p>
           </div>
         </div>
         <!-- Mission Slide -->
         <div class="carousel-item">
           <div class="mission-section">
-            <h2>Mission</h2>
-            <p>Our mission is to lead in sustainability by advancing technology that improves lives and protects the planet. We strive to achieve ambitious goals in energy efficiency, waste reduction, and social responsibility.</p>
+            <h2 style="font-size: 2.7em;" class="main-heading">Intel's Sustainability Mission</h2>
+            <p style="font-size: 1.3em; color: #fff; max-width: 600px; margin: 24px auto 0 auto;">
+              At Intel, we believe that technology can be a force for good. Our mission is to create world-changing technology that improves the life of every person on the planet, while reducing our environmental impact. We are committed to responsible manufacturing, using renewable energy, conserving water, and minimizing waste. By working together with our partners and communities, we strive to build a more sustainable future for generations to come.
+            </p>
           </div>
         </div>
       </div>
+      <!-- Carousel controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev" tabindex="0">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next" tabindex="0">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </header>
 
   <!-- Timeline Cards Section using Bootstrap grid -->
   <section class="timeline-cards container">
-    <div class="row g-4">
+    <div class="row g-4 force-ltr">
       <!-- Card 1: 1968 -->
       <div class="col-lg-4 col-md-6 col-12">
         <div id="year-1968" class="timeline-card" style="background-image: url('img/1.jpg'); background-size: cover; background-position: center;">
@@ -212,19 +224,75 @@
       </div>
     </div>
   </section>
+
+  <!-- Contact Form Section -->
+  <section id="contact" class="container contact-form-section" style="max-width: 600px; margin: 48px auto 0 auto;">
+    <h2 class="text-center mb-4" style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 700;">Let’s Make a Difference Together.</h2>
+    <!-- Bootstrap form for Name and Email -->
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label text-start fw-bold" style="color: #111; display: block; text-align: left;">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Name" required style="text-align: left; direction: ltr;">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label text-start fw-bold" style="color: #111; display: block; text-align: left;">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required style="text-align: left; direction: ltr;">
+      </div>
+      <button type="submit" class="btn btn-primary w-100" style="background-color: #0071c5; border: none; font-weight: bold;">Tell Me More</button>
+    </form>
+  </section>
+
   <!-- Footer section with Intel blue background -->
   <footer style="background: #0071C5; color: white; text-align: center; padding: 18px 0; margin-top: 32px; font-family: 'Lora', serif; font-size: 1.1em;">
-    Scroll to view timeline | Hover over cards to learn more!
+    <span>Contact us: <a href="mailto:info@intel.com">info@intel.com</a></span>
+    <span style="margin: 0 18px;">|</span>
+    <span style="font-size: 0.95em;">&copy; 2025 Intel Corporation. All rights reserved.</span>
+    <span style="margin: 0 18px;">|</span>
+    <span>Scroll to view timeline | Hover over cards to learn more!</span>
   </footer>
 
-  <!-- Bootstrap JS (optional, for dropdown functionality) -->
+  <!-- Bootstrap JS (for dropdown and carousel functionality) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Google Translate RTL detection and dynamic RTL switching -->
+  <script>
+    // List of RTL language codes
+    const rtlLangs = ['ar', 'he', 'fa', 'ur', 'ps', 'dv', 'ku', 'yi'];
+    // Helper to check if a language code is RTL
+    function isRtlLang(lang) {
+      return rtlLangs.some(code => lang.startsWith(code));
+    }
+    // Function to set RTL or LTR mode
+    function setRtlMode(isRtl) {
+      document.body.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+      document.documentElement.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+    }
+    // Detect Google Translate language changes
+    let lastLang = document.documentElement.lang || 'en';
+    function checkLangChange() {
+      // Google Translate sets lang on <html> or <body>
+      const htmlLang = document.documentElement.getAttribute('lang');
+      const bodyLang = document.body.getAttribute('lang');
+      const lang = bodyLang || htmlLang || 'en';
+      if (lang !== lastLang) {
+        setRtlMode(isRtlLang(lang));
+        lastLang = lang;
+      }
+    }
+    // Observe mutations for lang changes
+    const observer = new MutationObserver(checkLangChange);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    observer.observe(document.body, { attributes: true, attributeFilter: ['lang'] });
+    // Also check periodically in case Google Translate updates slowly
+    setInterval(checkLangChange, 1000);
+    // Initial check
+    checkLangChange();
+  </script>
   <!-- Navigation bar links control the carousel -->
   <script>
-    // Wait for the DOM to load
+    // Wait for DOM to be fully loaded before running JS
     document.addEventListener('DOMContentLoaded', function() {
       var carousel = document.querySelector('#mainCarousel');
-      if (carousel) {
+      if (carousel && window.bootstrap) {
         var bsCarousel = bootstrap.Carousel.getOrCreateInstance(carousel);
         // Home
         document.querySelectorAll('a.nav-link.home-link').forEach(function(link) {
@@ -237,14 +305,14 @@
         document.querySelectorAll('a.nav-link.about-link').forEach(function(link) {
           link.addEventListener('click', function(e) {
             e.preventDefault();
-            bsCarousel.to(2); // About is now the third slide
+            bsCarousel.to(1); // About is now the second slide
           });
         });
         // Mission
         document.querySelectorAll('a.nav-link.mission-link').forEach(function(link) {
           link.addEventListener('click', function(e) {
             e.preventDefault();
-            bsCarousel.to(3); // Mission is now the fourth slide
+            bsCarousel.to(2); // Mission is now the third slide
           });
         });
       }
